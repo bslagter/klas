@@ -50,7 +50,7 @@ If you don't want to install the correct PHP, Composer, etc. but you have Docker
 
 ### Prerequisite
 
-* Checkout this repo: `git clone git@github.com:bslagter/klas.git`
+* Checkout this repo and open the checkout: `git clone git@github.com:bslagter/klas.git && cd klas`
 * Build the Container: `docker build -t klas .`
 
 ### Execute
