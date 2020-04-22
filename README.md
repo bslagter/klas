@@ -57,5 +57,5 @@ If you don't want to install the correct PHP, Composer, etc. but you have Docker
 Run the project:
 
 ```bash
-docker run --rm -it -v ${PWD}:/app klas example/example.csv
+docker run --rm -it -v ${PWD}/example:/app/example klas example/example.csv
 ```
