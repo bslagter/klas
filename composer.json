@@ -1,0 +1,21 @@
+{
+    "name": "bslagter/klas",
+    "description": "Create class schedule with siblings in same segment",
+    "type": "project",
+    "require": {
+        "php": ">=7.2",
+        "phpoffice/phpspreadsheet": "^1.11"
+    },
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Bert Slagter",
+            "email": "bert@procurios.nl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "bslagter\\klas\\": "."
+        }
+    }
+}

@@ -1,0 +1,26 @@
+# PhpStorm and IntelliJ IDEA
+/.idea
+
+# IntelliJ IDEA
+*.iml
+
+# Temporary files
+*~
+*.orig
+
+# Eclipse
+.project
+.cache
+.cache/*
+.settings
+.settings/*
+/.metadata
+/.buildpath
+
+# OS X
+.DS_Store
+Thumbs.db
+
+# Composer
+/composer.lock
+/vendor
