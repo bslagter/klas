@@ -24,3 +24,6 @@ Thumbs.db
 # Composer
 /composer.lock
 /vendor
+
+# Example
+/example/test-ingedeeld.xlsx
