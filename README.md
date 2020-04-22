@@ -27,5 +27,35 @@ De spreadsheet die je daar uploadt, wordt nergens opgeslagen of bewaard. Maar we
 dat je toch liever zelf op je eigen computer de tool gebruikt. Dat kan als je iemand bent (of kent) die handig
 is met php en git.
 
-Download dan de code en start met `php run.php pad/naar/de/spreadsheet.xlsx`.
 
+# Setup and execution
+
+## Run locally
+
+### Prerequisites
+* Checkout this repo: `git clone git@github.com:bslagter/klas.git`
+* Make sure you have PHP 7.2 or higher installed
+* Make sure you have installed and [setup Composer](https://getcomposer.org/download/)
+* Install the project on your computer: `composer install` or `php composer.phar install` (depending on Global or local composer installation)
+
+### Execute
+Run the project:
+
+```bash
+php run.php example/test.csv
+```
+
+## Run inside Docker container
+If you don't want to install the correct PHP, Composer, etc. but you have Docker, it's easy:
+
+### Prerequisite
+
+* Checkout this repo and open the checkout: `git clone git@github.com:bslagter/klas.git && cd klas`
+* Build the Container: `docker build -t klas .`
+
+### Execute
+Run the project:
+
+```bash
+docker run --rm -it -v ${PWD}/example:/app/example klas example/example.csv
+```
