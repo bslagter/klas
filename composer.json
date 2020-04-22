@@ -6,7 +6,7 @@
         "php": ">=7.2",
         "phpoffice/phpspreadsheet": "^1.11"
     },
-    "license": "MIT License",
+    "license": "MIT",
     "authors": [
         {
             "name": "Bert Slagter",
