@@ -16,6 +16,15 @@ final class School
 
     public function getAddressByString(string $address): Address
     {
+        // compare lower case
+        $address = strtolower($address);
+
+        // remove spaces around the address
+        $address = trim($address);
+
+        // remove multiple whitespace in the address
+        $address = preg_replace('/\s+/', ' ', $address);
+
         if ($address === '') {
             $address = uniqid();
         }
