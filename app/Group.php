@@ -53,7 +53,7 @@ final class Group
             asort($counts);
             reset($counts);
             $nextSegment = key($counts);
-            $student->setSegment($nextSegment);
+            $student->setSegment($nextSegment, Student::REASON_RANDOM);
             $counts[$nextSegment]++;
         }
     }

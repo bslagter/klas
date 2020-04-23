@@ -5,6 +5,9 @@ namespace bslagter\klas\app;
 
 final class Student
 {
+    public const REASON_FROM_ADDRESS = 'Adres';
+    public const REASON_RANDOM = 'Willekeurig';
+
     /** @var Group */
     private $group;
     /** @var string */
@@ -13,6 +16,8 @@ final class Student
     private $address;
     /** @var int */
     private $segment;
+    /** @var string */
+    private $segmentReason;
 
     public function __construct(Group $group, string $name, Address $address)
     {
@@ -46,14 +51,20 @@ final class Student
         return $this->segment + 1;
     }
 
-    public function setSegment(int $segment)
+    public function setSegment(int $segment, string $reason): self
     {
         $this->segment = $segment;
+        $this->segmentReason = $reason;
         return $this;
     }
 
     public function hasSegment(): bool
     {
         return isset($this->segment);
+    }
+
+    public function getSegmentReason(): string
+    {
+        return $this->segmentReason;
     }
 }

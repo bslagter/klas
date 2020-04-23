@@ -52,7 +52,7 @@ final class School
 
             $segment = $i % $nrSegments;
             foreach ($address->getStudents() as $student) {
-                $student->setSegment($segment);
+                $student->setSegment($segment, Student::REASON_FROM_ADDRESS);
             }
             $i++;
         }
@@ -76,6 +76,7 @@ final class School
                     'name' => $student->getName(),
                     'address' => $student->getAddress()->getAddress(),
                     'segment' => $student->getSegment(),
+                    'reason' => $student->getSegmentReason(),
                 ];
             }
         }
@@ -104,7 +105,6 @@ final class School
             $addressString = (string) $sheet->getCell('C' . $row->getRowIndex())->getValue();
 
             if ($groupName === "" || $studentName === "") {
-                die ('empty');
                 continue;
             }
 
@@ -132,6 +132,7 @@ final class School
         $sheet->getCell('B1')->setValue('Leerling');
         $sheet->getCell('C1')->setValue('Adres');
         $sheet->getCell('D1')->setValue('Segment');
+        $sheet->getCell('E1')->setValue('Ingedeeld op');
 
         $i = 2;
         foreach ($this->groups as $group) {
@@ -141,6 +142,7 @@ final class School
                 $sheet->getCell('B' . $i)->setValue($student->getName());
                 $sheet->getCell('C' . $i)->setValue($student->getAddress()->getAddress());
                 $sheet->getCell('D' . $i)->setValue($student->getSegmentPlusOne());
+                $sheet->getCell('E' . $i)->setValue($student->getSegmentReason());
                 $i++;
             }
         }
